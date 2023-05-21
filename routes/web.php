@@ -1,5 +1,6 @@
 <?php
 
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    // Print a message to the debugbar
+    // Debugbar::info('Hello World');
+    // Debugbar::error('Error!');
+    // Debugbar::warning('Watch out…');
+    // Debugbar::addMessage('Another message', 'mylabel');
+
+    // Measure the execution time of some code
+    // Debugbar::startMeasure('render','Time for rendering the page');
+
+    // Trhow an exception
+    // try {
+    //     throw new Exception('Try message');
+    // } catch (Exception $e) {
+    //     Debugbar::addThrowable($e);
+    // }
+
+    $name = "LLouzada";
+
+    return view('welcome', [
+        'name' => $name
+    ]);
 });
